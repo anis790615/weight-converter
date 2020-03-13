@@ -48,6 +48,20 @@
     </div>
   </div>
   
- 
+  <script>
+    // Hiding the output card before entering any input
+    document.querySelector('#output').style.visibility= 'hidden';
+    document.querySelector('#lbsInput').addEventListener('input', function(e) {
+      let pounds = e.target.value;
+    document.querySelector('#output').style.visibility= 'visible';
+
+      // document.querySelector('#kiloOutput').innerHTML = Math.round((pounds/2.205)*1000)/1000;
+      document.querySelector('#kiloOutput').innerHTML = (pounds/2.205).toFixed(3);
+      document.querySelector('#ounceOutput').innerHTML = pounds*16;
+      // document.querySelector('#stoneOutput').innerHTML = Math.round((pounds/14)*1000)/1000;
+      document.querySelector('#stoneOutput').innerHTML = (pounds/14).toFixed(3);
+
+    });
+  </script>
 </body>
 </html>
